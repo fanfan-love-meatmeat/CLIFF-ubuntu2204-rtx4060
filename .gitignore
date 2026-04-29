@@ -8,7 +8,9 @@ data/ckpt/
 data/SMPL_NEUTRAL.pkl
 
 # SMPL models (requires license from MPI)
-data/smpl/
+data/SMPL_NEUTRAL.pkl
+data/SMPL_FEMALE.pkl
+data/SMPL_MALE.pkl
 
 # MMDetection checkpoints
 mmdetection/checkpoints/

@@ -59,10 +59,9 @@ ${ROOT}
         |-- hr48-PA43.0_MJE69.0_MVE81.2_3dpw.pt
         |-- res50-PA45.7_MJE72.0_MVE85.3_3dpw.pt
         |-- hr48-PA53.7_MJE91.4_MVE110.0_agora_val.pt
-    |-- smpl
-        |-- SMPL_FEMALE.pkl
-        |-- SMPL_MALE.pkl
-        |-- SMPL_NEUTRAL.pkl
+    |-- SMPL_FEMALE.pkl
+    |-- SMPL_MALE.pkl
+    |-- SMPL_NEUTRAL.pkl
 |-- mmdetection
     |-- checkpoints
         |-- yolox_x_8x8_300e_coco_20211126_140254-1ef88d67.pth
