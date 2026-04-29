@@ -162,7 +162,8 @@ def main(args):
             bboxes = outs_track.get('bboxes', None)
             
             # make id starting from 0 in order
-            ids, bboxes = (list(t) for t in zip(*sorted(zip(ids, bboxes))))
+            if len(ids) > 0:
+                ids, bboxes = (list(t) for t in zip(*sorted(zip(ids, bboxes))))
             
             # for convinience, just keep the bbox with the highest conf for each person
             existed_ids = []
@@ -176,6 +177,9 @@ def main(args):
                     continue
                 detection_all.append([i, x1, y1, x2, y2, score, 0.99, ids[j]])
                 existed_ids.append(ids[j])
+
+        # --- 请加上这一句，注意缩进与上面的 for j... 平齐 ---
+            prog_bar.update()
         
         # list to array
         detection_all = np.array(detection_all)
@@ -205,6 +209,9 @@ def main(args):
                 continue
             x1, y1, x2, y2, score = result[class_id][0]
             detection_all.append([i, x1, y1, x2, y2, score, 0.99, 0])
+
+            # --- 请加上这一句，注意缩进 ---
+            prog_bar.update()
             
         # list to array
         detection_all = np.array(detection_all)

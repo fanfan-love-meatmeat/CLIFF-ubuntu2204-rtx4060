@@ -1,3 +1,15 @@
+# CLIFF [ECCV 2022 Oral] — Ubuntu 22.04 + RTX 4060 Adapted Edition
+
+> **Adapted & verified on:** Ubuntu 22.04 / NVIDIA RTX 4060 Laptop (Ada Lovelace) / CUDA 11.8 / PyTorch 2.0.1 / Python 3.10  
+> **Setup guide:** See [README_FIX.md](./README_FIX.md) for step-by-step environment installation instructions.  
+> **Environment lock files:** `cliff_env.yml` (conda) / `cliff_env_requirements.txt` (pip freeze)
+
+---
+
+*Original README below — this adaptation is based on [haofanwang/CLIFF](https://github.com/haofanwang/CLIFF), which is built on the official [CLIFF](https://github.com/huawei-noah/noah-research/tree/master/CLIFF) by Huawei Noah's Ark Lab.*
+
+---
+
 # CLIFF [ECCV 2022 Oral]
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cliff-carrying-location-information-in-full/3d-human-pose-estimation-on-3dpw)](https://paperswithcode.com/sota/3d-human-pose-estimation-on-3dpw?p=cliff-carrying-location-information-in-full)
@@ -24,6 +36,9 @@ This repo is highly built on the official [CLIFF](https://github.com/huawei-noah
 - [x] **[01/31/23]** Further support motion smooth for SMPL pose and translation besides of 3D joints.
 
 ## Preparation
+
+> **Ubuntu 22.04 + RTX 4060 users:** Please follow the detailed guide in [README_FIX.md](./README_FIX.md) for GPU-specific environment setup.
+
 ```bash
 conda create -n cliff python=3.10
 pip install -r requirements.txt
@@ -83,6 +98,16 @@ python demo.py --ckpt data/ckpt/hr48-PA43.0_MJE69.0_MVE81.2_3dpw.pt \
                --save_results \
                --make_video \
                --frame_rate 30
+
+# RTX 4060 optimized command (use rotmat format to avoid torchgeometry bool bug):
+python demo.py --ckpt data/ckpt/hr48-PA43.0_MJE69.0_MVE81.2_3dpw.pt \
+               --backbone hr48 \
+               --input_path your_video.mp4 \
+               --input_type video \
+               --multi --infill --smooth \
+               --save_results --make_video \
+               --frame_rate 30 \
+               --pose_format rotmat
 ```
 
 ## SMPLify Fitting

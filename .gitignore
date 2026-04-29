@@ -1,0 +1,41 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Model checkpoints (download separately)
+data/ckpt/
+data/SMPL_NEUTRAL.pkl
+
+# SMPL models (requires license from MPI)
+data/smpl/
+
+# MMDetection checkpoints
+mmdetection/checkpoints/
+
+# MMTracking checkpoints
+mmtracking/checkpoints/
+mmtracking/*.pth
+
+# Wheel files
+*.whl
+
+# Test samples and generated outputs
+test_samples/
+*.jpg
+*.png
+!examples/*.jpg
+!examples/*.png
+
+# Output videos
+*.mp4
+
+# Generated output files from demo_fit.py
+kpt2d_gt.jpg
+kpt2d.jpg
+mesh.jpg
+mesh_fit.jpg
+
+# IDE
+.vscode/
+.idea/
