@@ -3,14 +3,19 @@ __pycache__/
 *.pyc
 *.pyo
 
-# Model checkpoints (download separately)
+# Model checkpoints (download via download_data.sh or Google Drive)
 data/ckpt/
-data/SMPL_NEUTRAL.pkl
 
 # SMPL models (requires license from MPI)
 data/SMPL_NEUTRAL.pkl
 data/SMPL_FEMALE.pkl
 data/SMPL_MALE.pkl
+
+# MPI auxiliary data files (download via download_data.sh)
+data/gmm_08.pkl
+data/J_regressor_extra.npy
+data/J_regressor_h36m.npy
+data/smpl_mean_params.npz
 
 # MMDetection checkpoints
 mmdetection/checkpoints/

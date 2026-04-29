@@ -37,7 +37,14 @@ This repo is highly built on the official [CLIFF](https://github.com/huawei-noah
 
 ## Preparation
 
-> **Ubuntu 22.04 + RTX 4060 users:** Please follow the detailed guide in [README_FIX.md](./README_FIX.md) for GPU-specific environment setup.
+> **One-step data download:**
+> ```bash
+> bash download_data.sh
+> ```
+> This script fetches all 4 auxiliary data files (~14 MB) from UPenn's SPIN mirror.
+> If the mirror is down, it prints clear manual-download instructions with URLs.
+
+For the full GPU-specific environment setup, see [README_FIX.md](./README_FIX.md).
 
 ```bash
 conda create -n cliff python=3.10
